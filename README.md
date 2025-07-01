@@ -33,7 +33,7 @@ source venv/bin/activate
 ```bash
 pip install "fastapi[all]" sqlalchemy psycopg2-binary alembic pydantic-settings
 ```
-## or
+### or
 ```bash
 pip3 install "fastapi[all]" sqlalchemy psycopg2-binary alembic pydantic-settings
 ```

@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from routers import books, authors
 
 app = FastAPI(
     title="Library API",
@@ -6,6 +7,10 @@ app = FastAPI(
     version="1.0.0",
 )
 
+app.include_router(books.router)
+app.include_router(authors.router)
+
+
 @app.get("/")
 def read_root():
-    return {"message": "Hello Library"}
+    return {"message": "Welcome to library api."}

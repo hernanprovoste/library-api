@@ -12,7 +12,7 @@ class Author(AuthorBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # Schemas for Book
 class BookBase(BaseModel):
@@ -27,4 +27,4 @@ class Book(BookBase):
     author: Author # Anidamos el schema del author
 
     class Config:
-        orm_mode = True
+        from_attributes = True
