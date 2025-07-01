@@ -2,7 +2,8 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     database_url: str
-    # secret_key: str  # Aprovechamos de agregar la SECRET_KEY que usaremos después
+    secret_key: str  # Aprovechamos de agregar la SECRET_KEY que usaremos después
+    algorithm: str
     access_token_expire_minutes: int = 30 # Y el tiempo de expiración
 
     class Config:

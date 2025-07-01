@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import books, authors
+from routers import books, authors, auth
 
 app = FastAPI(
     title="Library API",
@@ -9,6 +9,8 @@ app = FastAPI(
 
 app.include_router(books.router)
 app.include_router(authors.router)
+app.include_router(auth.router)
+
 
 
 @app.get("/")

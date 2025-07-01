@@ -4,13 +4,14 @@ from typing import List
 
 from database import models, schemas
 from database.database import get_db
+from security import get_current_user
 
 router = APIRouter(
     prefix="/books",
     tags=["Books"]
 )
 
-@router.post("/", response_model=schemas.Book)
+@router.post("/", response_model=schemas.Book, dependencies=[Depends(get_current_user)])
 def create_book(book: schemas.BookCreate, db: Session = Depends(get_db)):
     # Verifica si el autor existe
     db_author = db.query(models.Author).filter(models.Author.id == book.author_id).first()

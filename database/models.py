@@ -18,3 +18,9 @@ class Author(Base):
     name = Column(String, index=True)
 
     books = relationship("Book", back_populates="author")
+
+class User(Base):
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True, index=True)
+    email = Column(String, unique=True, index=True)
+    hashed_password = Column(String)

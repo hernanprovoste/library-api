@@ -31,11 +31,11 @@ source venv/bin/activate
 
 ### Install dependencies
 ```bash
-pip install "fastapi[all]" sqlalchemy psycopg2-binary alembic pydantic-settings
+pip install "fastapi[all]" sqlalchemy psycopg2-binary alembic pydantic-settings "passlib[bcrypt]" "python-jose[cryptography]"
 ```
 ### or
 ```bash
-pip3 install "fastapi[all]" sqlalchemy psycopg2-binary alembic pydantic-settings
+pip3 install "fastapi[all]" sqlalchemy psycopg2-binary alembic pydantic-settings "passlib[bcrypt]" "python-jose[cryptography]"
 ```
 
 ### Execute server
